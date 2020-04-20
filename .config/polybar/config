@@ -1,0 +1,572 @@
+\;===========================================================;
+;                                                            ;
+;                                                            ;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗   ;
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗  ;
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝  ;
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗  ;
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║  ;
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝  ;
+;                                                            ;
+;                                                            ;
+;   To learn more about how to configure Polybar             ;
+;   go to https://github.com/polybar/polybar                 ;
+;                                                            ;
+;   The README contains a lot of information                 ;
+;                                                            ;
+;                                                            ;
+;============================================================;
+
+#########################################################
+#							#
+#                 Settaggi Fondamentali                 #
+#                                                       #
+#########################################################
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+compositing-border = over
+
+### Adding Transparency To The Bar ###
+pseudo-transparency = true
+
+[global/wm]
+margin-top = 8
+margin-bottom = 8
+
+; vim:ft=dosini
+
+#########################################################
+#							#
+#             Polybar Themes Color Scheme               #
+#                                                       #
+#########################################################
+
+
+### Default Bar Colors ###
+[colors]
+
+background = #aa2F343F
+background-alt = #444
+
+foreground = #dfdfdf
+foreground-alt = #555
+
+primary = #f44336
+secondary = #ffffff
+alert = #ec960e
+
+### Manual Settings Colors ###
+
+red = #f44336
+blue = #2196f3
+indigo = #3f51b5
+green = #4caf50
+yellow = #f9f91a
+magenta = #f322c0
+white = #ffffff
+black = #000000
+
+
+### Dracula Bar Colors ###
+[dracula]
+
+background = #272935
+background-alt = #444
+foreground = #f8f8f2
+foreground-alt = #555
+
+indigo = #6071a4
+cyan = #8be8fd
+green = #52fa7c
+orange = #ffb86b
+pink = #ff7ac6
+purple = #bf95f9
+red = #ff5757
+yellow = #f1fa89
+white = #ffffff
+black = #000000
+
+
+#########################################################
+#                                                       #
+#               Polybar Main Bar Settings               #
+#                                                       #
+#########################################################
+
+
+[bar/mybar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 30 
+radius = 6.0
+fixed-center = false
+
+background = ${dracula.background}
+foreground = ${dracula.foreground}
+
+;separator = |
+
+line-size = 3
+line-color = #f00
+
+border-size = 8
+border-color = #00000000
+
+;padding-left = 2
+;padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 0
+
+;font-0 = fixed:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = siji:pixelsize=10;1
+
+font-0 = FontAwesome5Free:style=Solid:size=10;2
+font-1 = FontAwesome5Free:style=Regular:size=10;4
+font-2 = FontAwesome5Brands:style=Regular:size=10;4
+font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
+
+modules-left = i3-workspaces
+modules-center =
+modules-right = pacman-updates aur-updates date eth pulseaudio powermenu
+
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+#########################################################
+#                                                       #
+#                   Polybar Modules                     #
+#                                                       #
+#########################################################
+
+
+###########################
+###			###
+### I3 Workspace Module ###
+###			###
+###########################
+
+[module/i3-workspaces]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+<### Specific Workspace's Icons ###>
+ws-icon-0 = "1;龜"
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "4;"
+ws-icon-4 = "5;"
+
+<### Default Workspace's Icon ###>
+ws-icon-default = 
+
+<### Only show workspaces on the same output as the bar ###>
+
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.white}
+label-mode-background = ${dracula.red}
+
+<### Focused = Active workspace on focused monitor ###>
+
+label-focused = %icon% %index%
+label-focused-background = ${dracula.background}
+label-focused-foreground = ${dracula.red}
+label-focused-padding = 2
+
+<### Unfocused = Inactive workspace on any monitor ###>
+
+label-unfocused = %icon% %index%
+label-unfocused-padding = 2
+
+<### Visible = Active workspace on unfocused monitor ###>
+
+label-visible = %icon% %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+<### Urgent = Workspace with urgency hint set ###>
+
+label-urgent = %icon% %index%
+label-urgent-background = ${dracula.red}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+#############################
+###                       ###
+### Directory Name Module ###
+###			  ###
+#############################
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+format = <label>
+format-underline = ${colors.white}
+
+############################
+### Keyboard Name Module ###
+############################
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 2
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+##############################
+###			   ###
+### Filesystem Name Module ###
+###                        ###
+##############################
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+##################################
+###                            ###
+### Arch System Updates Module ###
+###                            ###
+##################################
+
+[module/pacman-updates]
+type = custom/script
+exec = checkupdates | wc -l
+click-left = gnome-terminal 
+interval = 1000
+
+label = " %output% "
+
+format = <label>
+format-background = ${dracula.background}
+format-foreground = ${dracula.white}
+format-prefix = "  "
+format-prefix-foreground = ${dracula.red}
+
+###########################################
+###                        		###
+### Arch User Repository Updates Module ###
+###                        		###
+###########################################
+
+[module/aur-updates]
+type = custom/script
+exec = yay -Qu | wc -l
+click-left = gnome-terminal
+interval = 1000
+
+label = " %output% "
+
+format = <label>
+format-background = ${dracula.background}
+format-foreground = ${dracula.white}
+format-prefix = "  "
+format-prefix-foreground = ${dracula.red}
+
+###########################
+###                     ###
+###  Brightness Module  ###
+###                     ###
+###########################
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+##################
+###	       ###
+### CPU Module ###
+###	       ###
+##################
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+#####################
+###		  ###
+### Memory Module ###
+###		  ###
+#####################
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+#######################
+###		    ###
+### Ethernet Module ###
+###		    ###
+#######################
+
+[module/eth]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+;label-connected = " %local_ip% "
+label-connected = " Connected "
+
+format = <label>
+format-connected = <label-connected>
+format-connected-prefix = "   "
+format-connected-prefix-foreground = ${dracula.red}
+
+
+label-disconnected = " Disconnected "
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = "   "
+format-disconnected-prefix-foreground = ${dracula.red}
+
+##########################
+###		       ###
+### Date & Hour Module ###
+###		       ###
+##########################
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d/%m/%Y"
+date-alt =
+
+time = %H:%M
+time-alt =
+
+label = " %time% - %date% "
+
+format = <label>
+format-foreground = ${dracula.white}
+format-prefix = "   "
+format-prefix-foreground = ${dracula.red}
+
+#############################
+###			  ###
+### Volume Control Module ###
+###                       ###
+#############################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = "%percentage%%  "
+label-volume-foreground = ${colors.white}
+
+label-muted = "Muted  "
+label-muted-foreground = ${colors.white}
+format-muted-prefix = "    "
+format-muted-foreground = ${colors.red}
+
+ramp-volume-width = 10
+ramp-volume-0 = "    " 
+ramp-volume-1 = "    "
+ramp-volume-2 = "    "
+ramp-volume-3 = "    "
+ramp-volume-4 = "    "
+ramp-volume-foreground = ${dracula.red}
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = Volume
+label-volume-foreground = ${root.foreground}
+label-volume-underline = ${colors.white}
+
+format-muted = <label-muted>
+format-muted-prefix =  
+format-muted-foreground = ${colors.red}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+######################
+###		   ###
+### Battery Module ###
+###		   ###
+######################
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+##########################
+###		       ###
+### Temperature Module ###
+###                    ###
+##########################
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+label = " %temperature-c% "
+label-warn = " %temperature-c% "
+label-warn-foreground = ${colors.red}
+
+format = <ramp> <label>
+format-foreground = ${dracula.white}
+format-underline = ${colors.red}
+
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${colors.red}
+format-warn-prefix-foreground = ${colors.red}
+format-warn-prefix-underline = ${colors.red}
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+ramp-3 = " "
+ramp-4 = " "
+ramp-foreground = ${dracula.white}
+
+#################################
+###			      ###
+### Power-Menu Control Module ###
+###                           ###
+#################################
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+format-spacing = 1
+
+label-open = "    "
+label-open-background = ${dracula.red}
+label-open-foreground = ${dracula.white}
+label-close = "  Exit "
+label-close-foreground = ${colors.white}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+### Menu Primary ###
+
+menu-0-0 = "  Suspend "
+menu-0-0-foreground = ${dracula.white}
+menu-0-0-exec = systemctl suspend
+menu-0-1 = "  Logout "
+menu-0-1-foreground = ${dracula.white}
+menu-0-1-exec = i3-msg exit
+menu-0-2 = "  Reboot "
+menu-0-2-foreground = ${dracula.red}
+menu-0-2-exec = systemctl reboot
+menu-0-3 = "  Power Off "
+menu-0-3-foreground = ${dracula.red}
+menu-0-3-exec = systemctl poweroff
