@@ -1,6 +1,6 @@
 # My i3 Configuration
 
-![Screenshot of my desktop](https://github.com/AndreaSantinato/Dotfiles/blob/master/.config/screenshot/qtile_layout_01.png)
+![Screenshot of my desktop](https://github.com/AndreaSantinato/Dotfiles/blob/master/.config/screenshot/qtile_layout_02.png)
 
 # Qtile
 
