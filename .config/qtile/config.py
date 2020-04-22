@@ -107,6 +107,13 @@ keys = [
              lazy.spawn("nitrogen"),
              desc='Launches The Nitrogen Wallpaper Utility'
              ),
+         ### My Program Launched With SUPER + CTRL + KEY ###
+         Key(
+             [mod, "control"], "l",
+             lazy.spawn("/usr/bin/xscreensaver-command -activate"),
+             desc='Launches The Xscreensaver Process'
+             ),
+
          ### Window controls
          Key(
              [mod], "k",
@@ -555,4 +562,4 @@ def start_once():
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Santi's Qtile"
