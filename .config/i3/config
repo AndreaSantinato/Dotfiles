@@ -1,3 +1,12 @@
+#    ________   ________
+#   |        | |
+#   |________| |________        Andrea Santinato
+#   |        |          |       https://github.com/AndreaSantinato
+#   |        |  ________|
+#
+# My Customized Configuration for i3wm (https://i3wm.org/)
+
+
 #=============================================================#
 #                                                             #
 #                                                             #
@@ -21,7 +30,7 @@
 
 
 #########################################################
-#				                        #
+#				                                                #
 #                 i3 Principal Settings                 #
 #                                                       #
 #########################################################
@@ -64,10 +73,10 @@ floating_modifier $mod
 #########################################################
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty 
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # start vifm (VI File Manager)
-bindsym $mod+Shift+Return exec --no-startup-id alacritty -e vifm & 
+bindsym $mod+Shift+Return exec --no-startup-id alacritty -e vifm &
 
 # kill focused window
 bindsym $mod+q kill
@@ -248,7 +257,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # Start Picom (Window Transparency)
-exec_always --no-startup-id picom & 
+exec_always --no-startup-id picom &
 
 # Start Nitrogen For Wallpaper's Settings (Wallpaper Configuration)
 exec --no-startup-id nitrogen --restore
@@ -263,7 +272,7 @@ exec --no-startup-id nitrogen --restore
 
 for_window [class="^.*"] border pixel 2
 
-gaps inner 8 
+gaps inner 8
 gaps outer 8
 
 #smart_gaps on

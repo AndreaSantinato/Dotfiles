@@ -1,4 +1,12 @@
-" vim: filetype=vifm :
+"    ________   ________
+"   |        | |
+"   |________| |________        Andrea Santinato
+"   |        |          |       https://github.com/AndreaSantinato
+"   |        |  ________|
+"
+" My Customized Version of vifmrc for Vifm (https://vifm.info/)
+
+" vim: filetype=vifm:
 " Sample configuration file for vifm (last updated: 27 January, 2020)
 " You can edit this file by hand.
 " The " character at the beginning of a line comments out the line.
@@ -67,7 +75,7 @@ set norunexec
 
 " Selected color scheme
 
-colorscheme dracula 
+colorscheme dracula
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M

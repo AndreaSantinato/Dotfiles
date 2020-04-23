@@ -1,1 +1,9 @@
+#    ________   ________
+#   |        | |
+#   |________| |________        Andrea Santinato
+#   |        |          |       https://github.com/AndreaSantinato
+#   |        |  ________|
+#
+# My Customized Version of Rofi (https://wiki.archlinux.org/index.php/Rofi)
+
 rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi

@@ -11,7 +11,7 @@ Hibernate_command="systemctl hibernate"
 Suspend_command="systemctl suspend"
 
 # you can customise the rofi command all you want ...
-rofi_command="rofi -width 10 -hide-scrollbar -bg #586e75 -opacity 95 -padding 6"
+rofi_command="rofi -width 12 -hide-scrollbar -bg #586e75 -opacity 85 -padding 8"
 
 options=$'Poweroff\nReboot\nLogout\nHibernate\nSuspend'
 
