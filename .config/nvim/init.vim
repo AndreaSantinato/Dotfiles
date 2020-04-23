@@ -17,8 +17,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'vim-python/python-syntax'
 Plug 'ap/vim-css-color'
-Plug 'vifm/vifm.vim'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
