@@ -6,4 +6,4 @@
 #
 # My Customized Version of Rofi (https://wiki.archlinux.org/index.php/Rofi)
 
-rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
+rofi.theme: /usr/share/rofi/themes/dracula_custom.rasi

@@ -20,10 +20,10 @@ if you want the AUR version (Arch User Repository) of rofi launcher you can inst
 
 # Customize Rofi
 
-Rofi has a lot of customization feature, one of theme is the ability to install a lot of theme that gave the .raise extension.
-All theme are stored into "/usr/share/rofi/themes" folder on your computer.
+Rofi has a lot of customization feature, one of theme is the ability to install a lot of theme that have the .rasi extension.
+All themes are stored into **/usr/share/rofi/themes** folder on your computer.
 
 ![Screenshot of Rofi](https://github.com/AndreaSantinato/Dotfiles/blob/master/.config/rofi/screenshot/rofi_layout_02.png)
 
-Rofi come with a lot of default theme, but you can download (or create) a custom theme to move into the "/usr/share/rofi/themes" folder.
-To choose a theme just enter "rofi-theme-selector" in the terminal and press enter. Will appair Rofi but now it let you choose a theme, use the arrow key to navigate into the list, use enter to have a demo of that theme and use alt+a to confirm the choosen theme
+Rofi come with a bunch of default themes, but you can download (or create) a custom theme to move into the **/usr/share/rofi/themes** folder.
+To choose a theme just enter **rofi-theme-selector** in the terminal and press enter. Will appair Rofi but now you can choose a theme: use the arrow key to navigate into the list, use enter to have a preview of that and use alt+a to confirm the choosen theme.
