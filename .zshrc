@@ -1,3 +1,10 @@
+#    ________   ________
+#   |        | |
+#   |________| |________        Andrea Santinato
+#   |        |          |       https://github.com/AndreaSantinato
+#   |        |  ________|
+#
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -109,11 +116,14 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Launch Neofetch
 neofetch
 
- alias ls='ls --color=auto'
- alias i3conf='nvim ~/.config/i3/config'
- alias polybarconf='nvim ~/.config/polybar/config'
- alias picomconf='nvim ~/.config/picom/picom.conf'
- alias vim='nvim'
- alias sshserver='ssh andrea@santiserver.ddns.net -p 100'
+# All My Alias
+alias ls='ls --color=auto'
+alias vim='nvim'
+alias i3conf='nvim ~/.config/i3/config'
+alias polybarconf='nvim ~/.config/polybar/config'
+alias qtileconf='nvim ~/.config/qtile/config.py'
+alias picomconf='nvim ~/.config/picom/picom.conf'
+alias sshserver='ssh andrea@santiserver.ddns.net -p 100'
