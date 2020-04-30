@@ -6,12 +6,12 @@
 
 Poweroff_command="systemctl poweroff"
 Reboot_command="systemctl reboot"
-Logout_command="i3-msg exit"
+Logout_command="kill -9 -1"
 Hibernate_command="systemctl hibernate"
 Suspend_command="systemctl suspend"
 
 # you can customise the rofi command all you want ...
-rofi_command="rofi -width 12 -hide-scrollbar -bg #586e75 -opacity 85 -padding 8"
+rofi_command="rofi -width 10 -hide-scrollbar -bg #586e75 -opacity 95 -padding 6"
 
 options=$'Poweroff\nReboot\nLogout\nHibernate\nSuspend'
 
