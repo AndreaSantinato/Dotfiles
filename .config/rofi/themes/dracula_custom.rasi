@@ -23,13 +23,13 @@
     yellow: 	rgba ( 241, 250, 140, 100 % );
 }
 * {
-    selected-normal-background:     @purple;
+    selected-normal-background:     @red;
     normal-background:              @background;
     normal-foreground:              @foreground;
     alternate-normal-background:    @normal-background;
     alternate-normal-foreground:    @foreground;
     selected-normal-foreground:     @normal-background;
-    urgent-foreground:              @red;
+    urgent-foreground:              @orange;
     urgent-background:              @normal-background;
     alternate-urgent-background:    @urgent-background;
     alternate-urgent-foreground:    @urgent-foreground;

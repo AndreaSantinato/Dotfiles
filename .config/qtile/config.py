@@ -206,8 +206,8 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 
 layout_theme = {"border_width": 3,
                 "margin": 10,
-                "border_focus": "e1acff",
-                "border_normal": "1D2330"
+                "border_focus": "ff5757",
+                "border_normal": "282a36"
                 }
 
 #######################
@@ -296,128 +296,121 @@ def init_widgets_list():
                         padding_x = 6,
                         borderwidth = 4,
                         active = dracula[13],
-                        inactive = dracula[8],
+                        inactive = dracula[13],
                         rounded = False,
-                        highlight_color = dracula[10],
+                        highlight_color = dracula[11],
                         highlight_method = "line",
-                        this_current_screen_border = dracula[10],
-                        this_screen_border = dracula[10],
+                        this_current_screen_border = dracula[11],
+                        this_screen_border = dracula[11],
                         other_current_screen_border = dracula[0],
                         other_screen_border = dracula[0],
                         foreground = dracula[10],
                         background = dracula[0]
                         ),
-               widget.Prompt(
-                        prompt=prompt,
-                        font="Ubuntu Mono",
-                        foreground = colors[3],
-                        background = colors[1],
-                        padding=10
-                        ),
                widget.Sep(
                         linewidth = 0,
-                        padding = 40,
+                        padding = 25,
                         foreground = colors[2],
                         background = colors[0]
                         ),
                widget.WindowName(
-                        foreground = colors[6],
+                        foreground = dracula[6],
                         background = dracula[0],
                         padding = 0
                         ),
                widget.TextBox(
                         text='',
                         background = dracula[0],
-                        foreground = dracula[10],
+                        foreground = dracula[11],
                         padding=0,
                         fontsize=37
                         ),
                widget.CurrentLayoutIcon(
                         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-                        background = dracula[10],
+                        background = dracula[11],
                         foreground = dracula[13],
                         padding = 0,
                         scale=0.7
                         ),
                widget.CurrentLayout(
-                        background = dracula[10],
+                        background = dracula[11],
                         foreground = dracula[13],
                         padding = 5
                         ),
                widget.TextBox(
                         text='',
-                        background = dracula[10],
-                        foreground = dracula[3],
+                        background = dracula[11],
+                        foreground = dracula[0],
                         padding=0,
                         fontsize=37
                         ),
                widget.TextBox(
                         text=" 🌡",
                         padding = 2,
-                        background = dracula[3],
+                        background = dracula[0],
                         foreground = dracula[13],
                         fontsize=11
                         ),
                widget.ThermalSensor(
-                        background = dracula[3],
+                        background = dracula[0],
                         foreground = dracula[13],
                         padding = 5
                         ),
                widget.TextBox(
                         text='',
-                        background = dracula[3],
-                        foreground = dracula[10],
+                        background = dracula[0],
+                        foreground = dracula[11],
                         padding=0,
                         fontsize=37
                         ),
                widget.TextBox(
                         text=" ⟳",
                         padding = 2,
-                        background = dracula[10],
+                        background = dracula[11],
                         foreground = dracula[13],
                         fontsize=14
                         ),
                widget.Pacman(
                         execute = "alacritty",
                         update_interval = 1800,
-                        background = dracula[10],
+                        background = dracula[11],
                         foreground = dracula[13]
                         ),
                widget.TextBox(
                         text="Updates",
-                        background = dracula[10],
+                        background = dracula[11],
                         foreground = dracula[13],
                         padding = 5
                         ),
                widget.TextBox(
                         text='',
-                        background = dracula[10],
-                        foreground = dracula[3],
+                        background = dracula[11],
+                        foreground = dracula[0],
                         padding=0,
                         fontsize=37
                         ),
                widget.TextBox(
                         text=" 🖬",
-                        background = dracula[3],
+                        background = dracula[0],
                         foreground = dracula[13],
                         padding = 0,
                         fontsize=14
                         ),
                widget.Memory(
-                        background = dracula[3],
+                        background = dracula[0],
                         foreground = dracula[13],
                         padding = 5
                         ),
                widget.TextBox(
                         text='',
-                        background = dracula[3],
-                        foreground = dracula[10],
+                        background = dracula[0],
+                        foreground = dracula[11],
                         padding=0,
                         fontsize=37
                         ),
                widget.TextBox(
                         text=" ",
-                        background = dracula[10],
+                        background = dracula[11],
                         foreground = dracula[13],
                         padding = 0,
                         fontsize=14
@@ -425,44 +418,52 @@ def init_widgets_list():
                widget.Net(
                         interface = "enp0s31f6",
                         format = '{down} ↓↑ {up}',
-                        background = dracula[10],
+                        background = dracula[11],
                         foreground = dracula[13],
                         padding = 5
                         ),
                widget.TextBox(
                         text='',
-                        background = dracula[10],
-                        foreground = dracula[3],
+                        background = dracula[11],
+                        foreground = dracula[0],
                         padding=0,
                         fontsize=37
                         ),
                widget.TextBox(
                         text=" ",
                         foreground = dracula[13],
-                        background = dracula[3],
+                        background = dracula[0],
                         padding = 0
                         ),
                widget.Volume(
                         foreground = dracula[13],
-                        background = dracula[3],
+                        background = dracula[0],
                         padding = 5
                         ),
                widget.TextBox(
                         text='',
-                        background = dracula[3],
-                        foreground = dracula[10],
+                        background = dracula[0],
+                        foreground = dracula[11],
                         padding=0,
                         fontsize=37
                         ),
+               widget.TextBox(
+                        text=" ",
+                        padding = 6,
+                        background = dracula[11],
+                        foreground = dracula[13],
+                        fontsize=12
+                        ),
                widget.Clock(
                         foreground = dracula[13],
-                        background = dracula[10],
-                        format="%A, %B %d  [ %H:%M ]"
+                        background = dracula[11],
+                        format="%A, %B %d  [ %H:%M ]",
+                        padding=6
                         ),
                widget.TextBox(
                         text='',
-                        foreground = dracula[3],
-                        background = dracula[10],
+                        foreground = dracula[0],
+                        background = dracula[11],
                         padding=0,
                         fontsize=37
                         ),
@@ -470,10 +471,10 @@ def init_widgets_list():
                         linewidth = 0,
                         padding = 8,
                         foreground = colors[0],
-                        background = dracula[3]
+                        background = dracula[0]
                         ),
                widget.Systray(
-                        background=dracula[10],
+                        background=dracula[0],
                         padding = 5
                         ),
               ]
