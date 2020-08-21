@@ -39,10 +39,10 @@ from typing import List
 ##### DEFINING SOME GENERAL VARIABLES #####
 ###########################################
 
-mod = "mod4"                                            # Sets mod key to SUPER/WINDOWS
-altMod = "mod1"                                         # Sets altMod key to ALT
-myTerm = "alacritty"                                    # My Terminal Of Choice
-myConfig = "/home/dt/.config/qtile/config.py"           # My Customm Qtile Config File Location
+mod = "mod4"                                                # Sets mod key to SUPER/WINDOWS
+altMod = "mod1"                                             # Sets altMod key to ALT
+myTerm = "alacritty"                                        # My Terminal Of Choice
+myConfig = "/home/andrea/.config/qtile/config.py"           # My Customm Qtile Config File Location
 
 ###########################
 ##### ALL KEYBINDINGS #####
@@ -205,9 +205,9 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 ##################################################
 
 layout_theme = {"border_width": 3,
-                "margin": 10,
+                "margin": 14,
                 "border_focus": "ff5757",
-                "border_normal": "282a36"
+                "border_normal": "272935"
                 }
 
 #######################
