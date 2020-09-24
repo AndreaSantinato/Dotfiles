@@ -109,10 +109,9 @@ keys = [
          ### My Program Launched With SUPER + CTRL + KEY ###
          Key(
              [mod, "control"], "l",
-             lazy.spawn("/usr/bin/xscreensaver-command -activate"),
-             desc='Launches The Xscreensaver Process'
-             ),
-
+             lazy.spawn("i3lock-fancy -pf Comic-Sans-MS"),
+             desc='Launches The i3lock-fancy Process'
+            ),
          ### Window controls
          Key(
              [mod], "k",
