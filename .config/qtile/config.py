@@ -275,12 +275,32 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+########################
+#### Mouse CallBacks ###
+########################
+
+def open_rofidmenu(qtile):
+    qtile.cmd_spawn('rofi -show drun -show-icons')
+
+def open_powerscriptmenu(qtile):
+    qtile.cmd_spawn('.config/qtile/power-menu.sh')
+
 ###################
 ##### WIDGETS #####
 ###################
 
 def init_widgets_list():
     widgets_list = [
+               widget.Sep(
+                        linewidth = 0,
+                        padding = 6,
+                        foreground = colors[2],
+                        background = colors[0]
+                        ),
+               widget.Image(
+                        filename = '~/.config/qtile/icons/home_red.png',
+                        mouse_callbacks = {'Button1': open_rofidmenu}
+                        ),
                widget.Sep(
                         linewidth = 0,
                         padding = 6,
@@ -476,6 +496,20 @@ def init_widgets_list():
                         background=dracula[0],
                         padding = 5
                         ),
+                widget.TextBox(
+                         text='⏻',
+                         background = dracula[0],
+                         foreground = dracula[13],
+                         padding=0,
+                         fontsize=18,
+                         mouse_callbacks = {'Button1': open_powerscriptmenu}
+                         ),
+                widget.Sep(
+                         linewidth = 0,
+                         padding = 8,
+                         foreground = colors[0],
+                         background = dracula[0]
+                         ),
               ]
     return widgets_list
 
