@@ -1,6 +1,6 @@
 # Dotfiles
 
-![Screenshot of my desktop](https://github.com/AndreaSantinato/Dotfiles/blob/master/.config/screenshot/qtile_layout_02.png) 
+![Screenshot of my desktop](https://github.com/AndreaSantinato/Dotfiles/blob/master/.config/screenshot/qtile_layout_03.png) 
 
 In this page you will find all my Dotfiles Configurations
 
