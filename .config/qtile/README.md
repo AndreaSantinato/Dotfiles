@@ -1,6 +1,6 @@
-# My i3 Configuration
+# My Qtile Configuration
 
-![Screenshot of my desktop](https://github.com/AndreaSantinato/Dotfiles/blob/master/.config/screenshot/qtile_layout_02.png)
+![Screenshot of my desktop](https://github.com/AndreaSantinato/Dotfiles/blob/master/.config/screenshot/qtile_layout_03.png)
 
 # Qtile
 
@@ -20,6 +20,7 @@ The MODKEY is set to the Super key (aka the defualt Windows key on every Keyboar
 | `MODKEY + SHIFT + RETURN` | opens the run launcher (in my case rofi is my default run launcher) |
 | `MODKEY + TAB` | Toggle Through Layouts |
 | `MODKEY + q` | closes the focused window |
+| `MODKEY + CTRL + l` | Execute the i3lock (i use i3lock-fancy, a fork of i3lock) |
 | `MODKEY + SHIFT + r` | restarts Qtile |
 | `MODKEY + SHIFT + r` | quits Qtile |
 | `MODKEY + SHIFT + e` | open the script power-menu.sh |
