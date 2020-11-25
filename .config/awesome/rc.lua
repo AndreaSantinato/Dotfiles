@@ -93,18 +93,27 @@ run_once({ "unclutter -root" }) -- entries must be comma-separated
 
 
 local themes = {
-    "default",          -- 1
-    "gtk",              -- 2
-    "multicolor",       -- 3
-    "powerarrow",       -- 4
-    "powerarrow-blue",  -- 5
-    "sky",              -- 6
-    "xresources",       -- 7
-    "zenburn",          -- 8
+    "blackburn",        -- 1
+    "copland",          -- 2
+    "default",          -- 3
+    "dremora",          -- 4
+    "gtk",              -- 5
+    "holo",             -- 6
+    "multicolor",       -- 7
+    "multicolor-two",   -- 8
+    "powerarrow",       -- 9
+    "powerarrow-blue",  -- 10
+    "powerarrow-dark",  -- 11
+    "rainbow",          -- 12
+    "sky",              -- 13
+    "steamburn",        -- 14
+    "vertex",           -- 15
+    "xresources",       -- 16
+    "zenburn",          -- 17
 }
 
 -- Select here the number of the choosed theme
-local chosen_theme = themes[5]
+local chosen_theme = themes[11]
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 beautiful.init(theme_path)
 
