@@ -104,16 +104,17 @@ local themes = {
     "powerarrow",       -- 9
     "powerarrow-blue",  -- 10
     "powerarrow-dark",  -- 11
-    "rainbow",          -- 12
-    "sky",              -- 13
-    "steamburn",        -- 14
-    "vertex",           -- 15
-    "xresources",       -- 16
-    "zenburn",          -- 17
+    "powerarrow-red",   -- 12
+    "rainbow",          -- 13
+    "sky",              -- 14
+    "steamburn",        -- 15
+    "vertex",           -- 16
+    "xresources",       -- 17
+    "zenburn",          -- 18
 }
 
 -- Select here the number of the choosed theme
-local chosen_theme = themes[11]
+local chosen_theme = themes[12]
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 beautiful.init(theme_path)
 
@@ -781,6 +782,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf")
+awful.spawn.with_shell("picom --experimental-backend --config $HOME/.config/picom/picom.conf")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("volumeicon")
