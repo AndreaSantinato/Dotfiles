@@ -15,6 +15,7 @@
     foreground: 	rgba ( 248, 248, 242, 100 % );
     comment: 	rgba ( 98, 114, 164, 100 % );
     cyan: 	rgba ( 139, 233, 253, 100 % );
+    darkblue:	rgb  ( 21, 101, 192, 100 %);
     green: 	rgba ( 80, 250, 123, 100 % );
     orange: 	rgba ( 255, 184, 108, 100 % );
     pink: 	rgba ( 255, 121, 198, 100 % );
@@ -23,7 +24,7 @@
     yellow: 	rgba ( 241, 250, 140, 100 % );
 }
 * {
-    selected-normal-background:     @red;
+    selected-normal-background:     @darkblue;
     normal-background:              @background;
     normal-foreground:              @foreground;
     alternate-normal-background:    @normal-background;
