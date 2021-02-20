@@ -42,6 +42,7 @@ from typing import List
 mod = "mod4"                                                # Sets mod key to SUPER/WINDOWS
 altMod = "mod1"                                             # Sets altMod key to ALT
 myTerm = "alacritty"                                        # My Terminal Of Choice
+myFileManager = "pcmanfm"                                   # My File Manager Of Choice
 myConfig = "/home/andrea/.config/qtile/config.py"           # My Customm Qtile Config File Location
 
 
@@ -85,6 +86,11 @@ keys = [
              [mod, "shift"], "e",
              lazy.spawn(".config/qtile/power-menu.sh"),
              desc='Launches The Power-Menu Script'
+             ),
+         Key(
+             [mod], "f",
+             lazy.spawn(myFileManager),
+             desc='Launches A Graphical File Manager'
              ),
          Key(
              [mod, "shift"], "f",
@@ -310,8 +316,8 @@ screens = [
                          padding_x = 6,
                          borderwidth = 4,
                          active = dracula[15],
-                         inactive = dracula[15],
-                         rounded = False,
+                         inactive = dracula[0],
+                         rounded = True,
                          highlight_color = dracula[13],
                          highlight_method = "line",
                          this_current_screen_border = dracula[13],
