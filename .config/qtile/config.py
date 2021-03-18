@@ -366,13 +366,18 @@ screens = [
                          fontsize=37
                          ),
                 widget.TextBox(
-                         text=" 🌡",
+                         text=" ⟳",
                          padding = 2,
                          background = dracula[13],
                          foreground = dracula[15],
                          fontsize=11
                          ),
-                widget.ThermalSensor(
+                widget.CheckUpdates(
+                         update_interval = 1800,
+                         distro = "Arch_checkupdates",
+                         display_format = "{updates} Updates",
+                         no_update_string = "You Are Updated!",
+                         mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                          background = dracula[13],
                          foreground = dracula[15],
                          padding = 5
@@ -385,13 +390,13 @@ screens = [
                          fontsize=37
                          ),
                 widget.TextBox(
-                         text=" 🖬",
+                         text=" 🌡",
+                         padding = 2,
                          background = dracula[5],
                          foreground = dracula[15],
-                         padding = 0,
-                         fontsize=14
+                         fontsize=11
                          ),
-                widget.Memory(
+                widget.ThermalSensor(
                          background = dracula[5],
                          foreground = dracula[15],
                          padding = 5
@@ -404,66 +409,54 @@ screens = [
                          fontsize=37
                          ),
                 widget.TextBox(
-                         text=" ",
-                         foreground = dracula[15],
+                         text=" 🖬",
                          background = dracula[13],
-                         padding = 0
+                         foreground = dracula[15],
+                         padding = 0,
+                         fontsize=14
                          ),
-                widget.Volume(
-                         foreground = dracula[15],
+                widget.Memory(
                          background = dracula[13],
+                         foreground = dracula[15],
                          padding = 5
                          ),
                 widget.TextBox(
                          text='',
                          background = dracula[13],
                          foreground = dracula[5],
+                         padding=0,
+                         fontsize=37
+                         ),
+                widget.TextBox(
+                         text=" ",
+                         background = dracula[5],
+                         foreground = dracula[15],
+                         padding = 0
+                         ),
+                widget.Volume(
+                         background = dracula[5],
+                         foreground = dracula[15],
+                         padding = 5
+                         ),
+                widget.TextBox(
+                         text='',
+                         background = dracula[5],
+                         foreground = dracula[13],
                          padding=0,
                          fontsize=37
                          ),
                 widget.TextBox(
                          text=" ",
                          padding = 6,
-                         background = dracula[5],
+                         background = dracula[13],
                          foreground = dracula[15],
                          fontsize=12
                          ),
                 widget.Clock(
+                         background = dracula[13],
                          foreground = dracula[15],
-                         background = dracula[5],
                          format="%A, %B %d  [ %H:%M ]",
                          padding=6
-                         ),
-                widget.TextBox(
-                         text='',
-                         foreground = dracula[13],
-                         background = dracula[5],
-                         padding=0,
-                         fontsize=37
-                         ),
-                widget.Sep(
-                         linewidth = 0,
-                         padding = 8,
-                         foreground = colors[0],
-                         background = dracula[13]
-                         ),
-                widget.TextBox(
-                         text='⏻',
-                         background = dracula[13],
-                         foreground = dracula[15],
-                         padding=0,
-                         fontsize=18,
-                         mouse_callbacks = {'Button1': open_powerscriptmenu}
-                         ),
-                widget.Sep(
-                         linewidth = 0,
-                         padding = 8,
-                         foreground = colors[0],
-                         background = dracula[13]
-                         ),
-                widget.QuickExit(
-                         background = dracula[13],
-                         foreground = dracula[15],
                          ),
                 widget.TextBox(
                          text='',
@@ -474,19 +467,49 @@ screens = [
                          ),
                 widget.Sep(
                          linewidth = 0,
-                         padding = 8,
+                         background = dracula[5],
                          foreground = colors[0],
-                         background = dracula[5]
+                         padding = 8
+                         ),
+                widget.TextBox(
+                         text='⏻',
+                         background = dracula[5],
+                         foreground = dracula[15],
+                         padding=0,
+                         fontsize=18,
+                         ),
+                widget.Sep(
+                         linewidth = 0,
+                         background = dracula[5],
+                         foreground = colors[0],
+                         padding = 8
+                         ),
+                widget.QuickExit(
+                         background = dracula[5],
+                         foreground = dracula[15],
+                         ),
+                widget.TextBox(
+                         text='',
+                         background = dracula[5],
+                         foreground = dracula[13],
+                         padding=0,
+                         fontsize=37
+                         ),
+                widget.Sep(
+                         linewidth = 0,
+                         background = dracula[13],
+                         foreground = colors[0],
+                         padding = 8
                          ),
                 widget.Systray(
-                         background=dracula[5],
+                         background=dracula[13],
                          padding = 5
                          ),
                 widget.Sep(
                          linewidth = 0,
-                         padding = 8,
                          foreground = colors[0],
-                         background = dracula[5]
+                         background = dracula[13],
+                         padding = 8
                          ),
             ],
             size=22,
