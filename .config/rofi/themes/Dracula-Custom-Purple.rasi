@@ -24,7 +24,7 @@
     yellow: 	rgba ( 241, 250, 140, 100 % );
 }
 * {
-    selected-normal-background:     @darkblue;
+    selected-normal-background:     @purple;
     normal-background:              @background;
     normal-foreground:              @foreground;
     alternate-normal-background:    @normal-background;
