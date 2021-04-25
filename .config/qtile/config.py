@@ -42,7 +42,8 @@ from typing import List
 mod = "mod4"                                                # Sets mod key to SUPER/WINDOWS
 altMod = "mod1"                                             # Sets altMod key to ALT
 myTerm = "alacritty"                                        # My Terminal Of Choice
-myFileManager = "pcmanfm"                                   # My File Manager Of Choice
+myFileManager = "nautilus"                                  # My File Manager Of Choice
+myEditor = "neovide"                                        # My Terminal/Graphical Editor Of Choise
 myConfig = "/home/andrea/.config/qtile/config.py"           # My Customm Qtile Config File Location
 
 
@@ -98,6 +99,11 @@ keys = [
              desc='Toggle Floating'
              ),
          ### My Applications Launched With SUPER + ALT + KEY
+         Key(
+             [mod, altMod], "e",
+             lazy.spawn(myEditor),
+             desc='Launches My Terminal/Graphical Editor Of Choise'
+             ),
          Key(
              [mod, altMod], "f",
              lazy.spawn(myTerm+" -e vifm"),
