@@ -63,7 +63,8 @@ keys = [
              ),
          Key(
              [mod, "shift"], "Return",
-             lazy.spawn("rofi -show drun -show-icons"),
+             #lazy.spawn("rofi -show drun -show-icons"),
+             lazy.spawn(".config/rofi/launchers/misc/launcher.sh"),
              desc='Rofi Run Launcher'
              ),
          Key(

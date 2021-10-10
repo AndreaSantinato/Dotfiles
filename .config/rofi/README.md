@@ -16,7 +16,7 @@ if you want the basic and normal rofi launcher you can install it from the offic
 
 if you want the AUR version (Arch User Repository) of rofi launcher you can install the rofi-dmenu version that have a more feature:
 
-`yay -S rofi-dmenu`
+`paru -S rofi-dmenu`
 
 # Customize Rofi
 
